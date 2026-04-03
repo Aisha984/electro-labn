@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="kk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Физика: Виртуалды зертхана</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f4f7f6;
+    }
+
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #2980b9;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 10px;
+    }
+
+    .theory-grid {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    … [12:42,
+    31.03.2026] Есен Айша: < !DOCTYPE html><html lang="kk"><head><meta charset="UTF-8"><title>Физика: Смарт Зертхана</title><style>body {
+      font-family: 'Times New Roman', serif;
+      background: #f0f4f8;
+      padding: 25px;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: #0d47a1;
+      text-align: center;
+    }
+
+    .header-box {
+      border: 2px solid #0d47a1;
+      padding: 20px;
+      border-radius: 15px;
+      margin-bottom: 30px;
+      background: #e3f2fd;
+    }
+
+    .theory-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      margin-bottom: 30px;
+    }
+
+    .theory-card {
+      background: #fff;
+      border: 2px solid #bbdefb;
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    .math {
+      font-size: 1.3em;
+      color: #d32f2f;
+      text-align: center;
+      display: block;
+      margin: 10px 0;
+    }
+
+    .simulation-area {
+      background: #263238;
+      padding: 15px;
+      border-radius: 15px;
+      margin-bottom: 30px;
+    }
+
+    .sim-frame {
+      width: 100%;
+      height: 600px;
+      border: none;
+      border-radius: 10px;
+    }
+
+    /* Жаңа нұсқаулық стилі */
+    .instruction-box {
+      background: #e8f5e9;
+      border-left: 5px solid #2e7d32;
+      padding: 15px;
+      margin-bottom: 20px;
+      font-size: 0.95em;
+    }
+
+    .input-panel {
+      background: #fff8e1;
+      border: 2px solid #ffcc80;
+      padding: 25px;
+      border-radius: 15px;
+      margin-bottom: 30px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 15px;
+      align-items: end;
+    }
+
+    .input-panel label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+      color: #5d4037;
+    }
+
+    input {
+      width: 90%;
+      padding: 10px;
+      border: 1px solid #bcaaa4;
+      border-radius: 6px;
+      font-size: 1em;
+    }
+
+    .add-btn {
+      background: #2e7d32;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .add-btn:hover {
+      background: #1b5e20;
+      transform: scale(1.05);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 25px;
+    }
+
+    th,
+    td {
+      border: 1px solid #cfd8dc;
+      padding: 15px;
+      text-align: center;
+    }
+
+    th {
+      background: #0d47a1;
+      color: white;
+    }
+
+    .user-calc {
+      background: #fffde7;
+      border: 2px solid #fbc02d;
+      width: 80px;
+      padding: 8px;
+      border-radius: 4px;
+    }
+
+    .check-btn {
+      background: #0288d1;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .schema-help {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin: 20px 0;
+    }
+
+    .help-img {
+      text-align: center;
+      font-size: 0.9em;
+      color: #555;
+      border: 1px dashed #999;
+      padding: 10px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="header-box">
+      <h1> Зертханалық жұмыс</h1>
+      <p><b>Тақырыбы:</b> Тізбектей және параллель жалғау заңдылықтарын зерттеу</p>
+      <p><b>Мақсаты:</b> Тізбек бөлігі үшін Ом заңын пайдаланып, жалпы кедергіні есептеу.</p>
+    </div>
+
+    <div class="theory-grid">
+      <div class="theory-card">
+        <h3>1. Тізбектей жалғау</h3>
+        <span class="math">$$I = I_1 = I_2$$</span>
+        <span class="math">$$U_{жалпы} = U_1 + U_2$$</span>
+        <span class="math">$$R_{жалпы} = R_1 + R_2$$</span>
+      </div>
+      <div class="theory-card">
+        <h3>2. Параллель жалғау</h3>
+        <span class="math">$$I_{жалпы} = I_1 + I_2$$</span>
+        <span class="math">$$U = U_1 = U_2$$</span>
+        <span class="math">$$\frac{1}{R_{жалпы}} = \frac{1}{R_1} + \frac{1}{R_2}$$</span>
+      </div>
+    </div>
+
+    <h2>Виртуалды лаборатория (PhET)</h2>
+
+    <div class="instruction-box">
+      <strong>Құралдарды қалай пайдалану керек:</strong>
+      <ul>
+        <li><b>Вольтметр:</b> Оң жақ панельден вольтметрді сүйреп әкеліп, оның екі ұшын (қызыл және қара) өлшенетін бөлшектің екі жағына тигізіңіз.</li>
+        <li><b>Амперметр:</b> "Тілшелі" амперметрді алып, оны кез келген сымның үстіне апарыңыз, ол тоқты автоматты түрде көрсетеді.</li>
+        <li><b>Мәндерді көру:</b> Оң жақ жоғарғы бұрыштағы <b>"Values"</b> (Мәндер) батырмасын бассаңыз, кедергілер көрінеді.</li>
+      </ul>
+    </div>
+
+    <div class="simulation-area">
+      <iframe class="sim-frame" src="https://phet.colorado.edu/sims/html/circuit-construction-kit-dc/latest/circuit-construction-kit-dc_all.html?screens=1" allowfullscreen></iframe>
+    </div>
+
+    <h3>Схема құрастыруға көмекші нұсқау:</h3>
+    <div class="schema-help">
+      <div class="help-img">
+        <b>Тізбектей схема:</b><br>
+        <p>Батарея -> Резистор 1 -> Резистор 2 -> Кілт (бәрі бір сызықта)</p>
+      </div>
+      <div class="help-img">
+        <b>Параллель схема:</b><br>
+        <p>Сым екіге айырылып, әр тармаққа резистор қойылады</p>
+      </div>
+    </div>
+
+    <h2>Өлшеулерді енгізу</h2>
+    <div class="input-panel">
+      <div>
+        <label>Қосу түрі:</label>
+        <select id="connType" style="padding:10px; border-radius:6px; width:100%;">
+          <option value="Тізбектей">Тізбектей</option>
+          <option value="Параллель">Параллель</option>
+        </select>
+      </div>
+      <div><label>I жалпы (A):</label><input type="number" id="mI" step="0.01"></div>
+      <div><label>U1 (V):</label><input type="number" id="mU1" step="0.1"></div>
+      <div><label>U2 (V):</label><input type="number" id="mU2" step="0.1"></div>
+      <div><label>U жалпы (V):</label><input type="number" id="mUt" step="0.1"></div>
+      <button class="add-btn" onclick="saveData()">Мәнді сақтау</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Түрі</th>
+          <th>I (A)</th>
+          <th>U1 (V)</th>
+          <th>U2 (V)</th>
+          <th>U жалпы (V)</th>
+          <th>R жалпы (Ом) - Өзің есепте</th>
+          <th>Тексеру</th>
+        </tr>
+      </thead>
+      <tbody id="dataTable"></tbody>
+    </table>
+
+    <div style="margin-top:40px; background:#f9f9f9; padding:20px; border-radius:10px; border:1px solid #ddd;">
+      <h3>Қорытынды жазу:</h3>
+      <textarea style="width:100%; height:100px; border-radius:8px; padding:10px;" placeholder="Эксперимент нәтижесі бойынша қорытындыңызды осында қалдырыңыз..."></textarea>
+    </div>
+  </div>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <script>
+    function saveData() {
+      const type = document.getElementById('connType').value;
+      const i = document.getElementById('mI').value;
+      const u1 = document.getElementById('mU1').value;
+      const u2 = document.getElementById('mU2').value;
+      const ut = document.getElementById('mUt').value;
+      if (!i || !u1 || !u2 || !ut) {
+        alert("Барлық ұяшықтарды толтырыңыз!");
+        return;
+      }
+      const table = document.getElementById('dataTable');
+      const row = table.insertRow();
+      row.innerHTML = `
+            <td>${type}</td>
+            <td>${i}</td>
+            <td>${u1}</td>
+            <td>${u2}</td>
+            <td>${ut}</td>
+            <td><input type="number" class="user-calc" placeholder="?"></td>
+            <td><button class="check-btn" onclick="checkRow(this, ${ut}, ${i})">Тексеру</button></td>
+        `;
+      document.getElementById('mI').value = '';
+      document.getElementById('mU1').value = '';
+      document.getElementById('mU2').value = '';
+      document.getElementById('mUt').value = '';
+    }
+
+    function checkRow(btn, u, i) {
+      const row = btn.parentNode.parentNode;
+      const userR = parseFloat(row.querySelector('.user-calc').value);
+      const correctR = u / i;
+      if (Math.abs(userR - correctR) < 0.2) {
+        alert("Керемет! Есептеу дұрыс. R = " + correctR.toFixed(2) + " Ом");
+        row.style.background = "#e8f5e9";
+      } else {
+        alert("Қате! Ом заңын қайта қолданып көр: R = U/I. Күтілетін мән: " + correctR.toFixed(2));
+        row.style.background = "#ffebee";
+      }
+    }
+  </script>
+
+</body>
+
+</html>
+
+
+
+
